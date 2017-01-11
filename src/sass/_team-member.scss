@@ -1,0 +1,81 @@
+$border-color: $light-blue;
+$description-color: $light-blue;
+$shadow-color: rgba(0, 0, 0, .2);
+
+$border-width: 5px;
+$img-width: 150px;
+$padding-size: 37.5px;
+$details-width: $img-width + ($border-width + $padding-size) * 2;
+
+%team-member--left {
+  padding-right: 100px;
+  text-align: right;
+}
+
+%team-member--right {
+  padding-left: 100px;
+  text-align: left;
+
+  .team-member__horizontal-line {
+    right: 0;
+  }
+}
+
+.team-member {
+  &--megan {
+    @extend %team-member--left;
+  }
+
+  &--matt {
+    @extend %team-member--right;
+  }
+
+  &__top {
+    margin-bottom: 45px;
+    position: relative;
+  }
+
+  &__horizontal-line {
+    background-color: $light-blue;
+    height: 5px;
+    position: absolute;
+    top: calc(50% - 2.5px);
+    width: calc(100% - 235px);
+  }
+
+  &__img-holder {
+    border: solid $border-width $border-color;
+    border-radius: 50%;
+    display: inline-block;
+    padding: $padding-size;
+  }
+
+  &__img {
+    border-radius: 50%;
+    box-shadow: 0 5px 10px 0 $shadow-color;
+    height: $img-width;
+    width: $img-width;
+  }
+
+  &__details {
+    display: inline-block;
+    text-align: left;
+    width: $details-width;
+  }
+
+  &__name {
+    color: $white;
+    font-size: 25px;
+    font-weight: $bold;
+    letter-spacing: .5px;
+    margin: 0 0 5px;
+  }
+
+  &__description {
+    color: $description-color;
+    font-size: 20px;
+    font-weight: $medium;
+    letter-spacing: .4px;
+    margin: 0;
+  }
+}

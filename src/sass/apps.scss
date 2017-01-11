@@ -1,0 +1,24 @@
+@import 'appcolors';
+@import 'shared';
+
+.apps {
+  .hero {
+    background-image: url('/static/images/hero-background-apps.svg');
+  }
+
+  .mission {
+    background-image: url('/static/images/mission-background-apps.svg');
+  }
+
+  .case-study {
+    background-image: url('/static/images/case-study-background-apps.svg');
+  }
+
+  .work {
+    background-image: url('/static/images/work-background-apps.svg');
+  }
+
+  .team {
+    background-image: url('/static/images/team-background-apps.svg');
+  }
+}

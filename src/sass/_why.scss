@@ -1,0 +1,44 @@
+.why {
+  background-image: url('../images/why-background.svg');
+  background-position: center;
+  background-repeat: no-repeat;;
+  background-size: auto 100%;
+  padding: 125px 0;
+
+  &__headline {
+    @extend %bold-sub-headline;
+    margin-top: 0;
+  }
+
+  &__blurb {
+    color: $very-dark-blue;
+    font-size: 27.5px;
+    font-weight: 500;
+    letter-spacing: .6px;
+    margin-bottom: 1.3em;
+  }
+
+  &__value-prop {
+    .why__headline {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__benefits {
+    padding-top: 80px;
+    text-align: right;
+
+    .why__headline {
+      margin-bottom: 27.5px;
+    }
+  }
+
+  &__benefit-list {
+    color: $very-dark-blue;
+    font-family: 'Gilroy', sans-serif;
+    font-size: 45px;
+    font-weight: 800;
+    letter-spacing: .8px;
+    list-style-type: none;
+  }
+}

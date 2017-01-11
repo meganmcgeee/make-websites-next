@@ -1,0 +1,29 @@
+@import 'botcolors';
+@import 'shared';
+
+.bots {
+  .hero {
+    background-image: url('/static/images/hero-background-bots.svg');
+  }
+
+  .mission {
+    background-image: url('/static/images/mission-background-bots.svg');
+  }
+
+  .case-study {
+    background-image: url('/static/images/case-study-background-bots.svg');
+  }
+
+  .work {
+    background-image: url('/static/images/work-background-bots.svg');
+  }
+
+  .team {
+    background-color: $light-blue;
+    background-image: url('/static/images/team-background-bots.svg');
+  }
+
+  .contact {
+    background-color: $light-blue;
+  }
+}

@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Avenir Next";
+    src: url("AvenirNext-Bold.eot"); /* IE9 */
+    src: url("AvenirNext-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("AvenirNext-Bold.woff") format("woff"), /* chrome, firefox */
+    url("AvenirNext-Bold.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("AvenirNext-Bold.svg#Avenir Next") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+

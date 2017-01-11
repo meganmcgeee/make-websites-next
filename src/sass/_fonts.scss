@@ -1,0 +1,32 @@
+$medium: 500;
+$bold: 700;
+$extra-bold: 800;
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('../fonts/AvenirNext-Medium.eot');
+  src: url('../fonts/AvenirNext-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/AvenirNext-Medium.woff') format('woff'),
+  url('../fonts/AvenirNext-Medium.ttf') format('truetype'),
+  url('../fonts/AvenirNext-Medium.svg#Avenir Next Medium') format('svg');
+  font-style: normal;
+  font-weight: $medium;
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('../fonts/AvenirNext-Bold.eot');
+  src: url('../fonts/AvenirNext-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/AvenirNext-Bold.woff') format('woff'),
+  url('../fonts/AvenirNext-Bold.ttf') format('truetype'),
+  url('../fonts/AvenirNext-Bold.svg#Avenir Next') format('svg');
+  font-style: normal;
+  font-weight: $bold;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-ExtraBold.otf') format('opentype');
+  font-style: normal;
+  font-weight: $extra-bold;
+}

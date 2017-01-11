@@ -1,0 +1,24 @@
+.case-study {
+  background-size: 100% 100%;
+  padding: 140px 0;
+  position: relative;
+  z-index: 2;
+
+  &__headline {
+    @extend %bold-sub-headline;
+
+    color: $case-study-heading-color;
+    margin: 0 0 60px;
+  }
+
+  &__details {
+    color: $case-study-details-color;
+    font-size: 20px;
+    font-weight: $medium;
+    letter-spacing: .4px;
+
+    p {
+      margin-bottom: 1.3em;
+    }
+  }
+}
