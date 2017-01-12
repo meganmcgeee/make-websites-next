@@ -5,9 +5,18 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
+    "postinstall": "heroku-nextjs-build",
+    "build": "next build",
+    "start": "next start -p $PORT",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix"
   },
+  "engines": {
+    "node": "^7.4.0"
+  },
+  "cacheDirectories": [
+    "nextjs/node_modules"
+  ],
   "repository": "http://github.com/makeappsio/make-websites-next.git",
   "author": "Matthew Jesuele <matt@makeapps.io>",
   "license": "MIT",
@@ -29,6 +38,7 @@
     "stylelint-config-standard": "^15.0.0"
   },
   "dependencies": {
+    "@mars/heroku-nextjs-build": "^1.0.1",
     "classnames": "^2.2.5",
     "lodash": "^4.17.2",
     "next": "latest||^2.0.0-beta",
