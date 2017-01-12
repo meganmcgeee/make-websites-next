@@ -11,22 +11,22 @@ import { ThemeProvider } from 'styled-components';
 import Waypoint from 'react-waypoint';
 import Why from '../components/Why';
 import Work from '../components/Work';
-import navItems from '../data/appNavItems';
-import projects from '../data/appProjects';
+import navItems from '../lib/navItems';
+import projects from '../lib/projects';
 import theme from '../data/theme';
 
 export default (site, sisterSite) => {
   const View = ({ fixNavbar, navbarIsFixed }) => (
     <ThemeProvider theme={theme(site.slug)}>
       <div className="apps">
-        <Header site={site} />
+        <Header title={site.title} />
         <Waypoint onPositionChange={fixNavbar} />
-        <Navbar {...{ navbarIsFixed, navItems, sisterSite }} />
+        <Navbar {...{ navbarIsFixed, navItems: navItems(site.slug), sisterSite }} />
         <Hero site={site} />
         <Mission />
         <Why />
         <SomethingCool />
-        <Work {...{ projects, sisterSite }} />
+        <Work {...{ projects: projects(site.slug), sisterSite }} />
         <Team />
         <Contact />
       </div>

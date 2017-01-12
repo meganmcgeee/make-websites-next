@@ -1,13 +1,14 @@
 import React, { PropTypes } from 'react';
 
 import { Navbar as BootstrapNavbar } from 'react-bootstrap';
+import Link from 'next/prefetch';
 import cx from 'classnames';
 import getTheme from '../lib/getTheme';
 import scroll from '../lib/scroll';
 import styled from 'styled-components';
 
-const navbarHeight = `44px`;
-const buttonBorderWidth = `2px`;
+const navbarHeight = 44;
+const buttonBorderWidth = 2;
 const navbarShadowColor = `rgba(0, 0, 0, .2)`;
 
 const MakeNavbar = styled(BootstrapNavbar)`
@@ -20,7 +21,7 @@ const MakeNavbar = styled(BootstrapNavbar)`
   left: 0;
   letter-spacing: .3px;
   margin: 30px 0 0;
-  min-height: ${navbarHeight} + 2px;
+  min-height: ${navbarHeight + 2}px;
   padding: 1px 75px;
   position: fixed;
   right: 0;
@@ -30,6 +31,25 @@ const MakeNavbar = styled(BootstrapNavbar)`
     margin .5s ease-in-out,
     padding .5s ease-in-out;
   z-index: 1000;
+
+  &.affix-top {
+    .navbar__contact-link {
+      border-color: ${getTheme(`colors.navbarLink`)};
+      line-height: ${navbarHeight - buttonBorderWidth}px;
+      padding: 0 27.5px !important;
+
+      &:focus,
+      &:hover {
+        color: ${getTheme(`colors.navbarLink`)} !important;
+      }
+    }
+  }
+
+  &.affix {
+    background-color: ${getTheme(`colors.navbarTransparentizedBackground`)};
+    box-shadow: 0 5px 20px ${navbarShadowColor};
+    margin: 0;
+  }
 `;
 
 const Logo = styled.img`
@@ -59,7 +79,7 @@ const NavItem = styled.li`
   > a {
     color: ${getTheme(`colors.navbarLink`)} !important;
     height: 100%;
-    line-height: ${navbarHeight} !important;
+    line-height: ${navbarHeight}px !important;
     padding: 0 !important;
   }
 
@@ -117,9 +137,9 @@ const Navbar = ({ navbarIsFixed, navItems, sisterSite }) => (
           </ContactLink>
         </NavItem>
         <NavItem>
-          <a href={sisterSite.url}>
+          <Link href={sisterSite.url}>
             <Logo alt={sisterSite.title} src={sisterSite.logo} />
-          </a>
+          </Link>
         </NavItem>
       </ul>
     </div>

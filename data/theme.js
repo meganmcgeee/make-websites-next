@@ -1,7 +1,9 @@
 const blue = `#007ee5`;
+const transparentizedBlue = `rgba(0, 126, 229, 0.95)`;
 const darkBlue = `#0160ae`;
 const darkPurple = `#183463`;
 const lightBlue = `#b2d8f7`;
+const transparentizedLightBlue = `rgba(178, 216, 247, 0.95)`;
 const lightGreen = `#a2df64`;
 const tangerine = `#f8906f`;
 const veryDarkBlue = `#003561`;
@@ -13,6 +15,7 @@ const appColors = {
   contactBackground: `initial`,
   contactHeading: blue,
   navbarBackground: blue,
+  navbarTransparentizedBackground: transparentizedBlue,
   navbarLink: white,
   navbarLinkHover: veryDarkBlue,
   projectCardBorder: lightBlue,
@@ -29,6 +32,7 @@ const botColors = {
   contactBackground: lightBlue,
   contactHeading: darkPurple,
   navbarBackground: lightBlue,
+  navbarTransparentizedBackground: transparentizedLightBlue,
   navbarLink: darkPurple,
   navbarLinkHover: white,
   projectCardBorder: lightBlue,

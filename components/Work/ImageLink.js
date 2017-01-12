@@ -4,16 +4,24 @@ import { Media } from 'react-bootstrap';
 import getTheme from '../../lib/getTheme';
 import styled from 'styled-components';
 
+const Image = styled.img`
+  border-radius: 50%;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .2);
+  box-sizing: border-box;
+  width: 225px;
+`;
+
 const ImageLink = Tag => {
   const ImgHolder = styled(Tag)`
     border: solid 5px ${getTheme(`colors.projectCardBorder`)};
     border-radius: 50%;
     padding: 37.5px;
   `;
+
   const Link = ({ alt, href, imgSrc }) => (
     <ImgHolder className="media-middle">
       <a href={href} rel="noopener noreferrer" target="_blank" >
-        <img alt={alt} className="media-object project-card__img" src={imgSrc} />
+        <Image alt={alt} className="media-object" src={imgSrc} />
       </a>
     </ImgHolder>
   );
