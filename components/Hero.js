@@ -1,10 +1,9 @@
 import React, { PropTypes } from 'react';
 
-import sectionBackgroundImage from '../lib/sectionBackgroundImage';
 import styled from 'styled-components';
 
 const HeroContainer = styled.header`
-  ${sectionBackgroundImage(`hero`)}
+  background-image: ${props => props.theme.sectionBackgroundImage(`hero`)};
   background-position: center;
   background-size: 100% 100%;
   display: table;
@@ -27,7 +26,7 @@ const Logo = styled.img`
 `;
 
 const Hero = ({ site }) => (
-  <HeroContainer slug={site.slug}>
+  <HeroContainer>
     <LogoContainer>
       <Logo src={site.logo} alt={site.title} />
     </LogoContainer>
@@ -37,7 +36,6 @@ const Hero = ({ site }) => (
 Hero.propTypes = {
   site: PropTypes.shape({
     logo: PropTypes.string.isRequired,
-    slug: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
   }).isRequired,
 };

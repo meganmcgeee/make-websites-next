@@ -1,24 +1,17 @@
 import { Col, Grid, Row } from 'react-bootstrap';
-import React, { PropTypes } from 'react';
 
 import BoldSubHeadline from './BoldSubHeadline';
+import React from 'react';
+import getTheme from '../lib/getTheme';
 import styled from 'styled-components';
-import styles from '../data/styleVariables';
-
-const backgroundColor = props =>
-  props.slug === `bots` ?
-    `background-color: ${styles.colors.lightBlue}` :
-    ``;
 
 const ContactSection = styled.section`
-  ${backgroundColor}
+  background-color: ${getTheme(`colors.contactBackground`)}
   padding: 115px 0 130px;
 `;
 
-const headingColor = props =>
-  styles.colors[props.slug].contactHeading;
 const Text = styled(BoldSubHeadline)`
-  color: ${headingColor};
+  color: ${getTheme(`colors.contactHeading`)};
   line-height: 1.2;
 `;
 
@@ -29,11 +22,11 @@ const CTAButtonHolder = styled(Col)`
 
 const CTAButton = styled.a`
   background-color: transparent;
-  border: solid 3px ${styles.colors.veryDarkBlue};
+  border: solid 3px ${getTheme(`colors.veryDarkBlue`)};
   border-radius: 5px;
-  color: ${styles.colors.veryDarkBlue};
+  color: ${getTheme(`colors.veryDarkBlue`)};
   font-size: 20px;
-  font-weight: ${styles.fontWeight.bold};
+  font-weight: ${getTheme(`fontWeight.bold`)};
   letter-spacing: .4px;
   padding: 15px 37.5px;
 
@@ -57,13 +50,13 @@ const TableRow = styled(Row)`
   }
 `;
 
-const Contact = ({ slug }) => (
+export default () => (
   <ContactSection className="contact" id="contact">
     <Grid>
       <TableRow>
         <Col sm={1} />
         <Col className="contact__text" sm={6}>
-          <Text slug={slug}>
+          <Text>
             Ready for your<br />
             next big thing?
           </Text>
@@ -76,9 +69,3 @@ const Contact = ({ slug }) => (
     </Grid>
   </ContactSection>
 );
-
-Contact.propTypes = {
-  slug: PropTypes.string.isRequired,
-};
-
-export default Contact;

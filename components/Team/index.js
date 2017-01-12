@@ -1,18 +1,11 @@
-import React, { PropTypes } from 'react';
-
+import React from 'react';
 import TeamMember from './TeamMember';
-import sectionBackgroundImage from '../../lib/sectionBackgroundImage';
+import getTheme from '../../lib/getTheme';
 import styled from 'styled-components';
-import styles from '../../data/styleVariables';
-
-const backgroundColor = props =>
-  props.slug === `bots` ?
-    `background-color: ${styles.colors.lightBlue}` :
-    ``;
 
 const TeamSection = styled.section`
-  ${sectionBackgroundImage(`team`)}
-  ${backgroundColor}
+  background-image: ${props => props.theme.sectionBackgroundImage(`team`)};
+  background-color: ${getTheme(`colors.teamBackground`)};
   background-size: 100% 100%;
   display: table;
   margin-top: -60px;
@@ -25,8 +18,8 @@ const TeamSection = styled.section`
   }
 `;
 
-const Team = ({ slug }) => (
-  <TeamSection id="team" slug={slug}>
+export default () => (
+  <TeamSection id="team">
     <TeamMember
       description="Technologist for good"
       imgSrc="http://placekitten.com/150/150"
@@ -43,9 +36,3 @@ const Team = ({ slug }) => (
     />
   </TeamSection>
 );
-
-Team.propTypes = {
-  slug: PropTypes.string.isRequired,
-};
-
-export default Team;

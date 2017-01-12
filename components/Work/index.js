@@ -3,13 +3,11 @@ import React, { PropTypes } from 'react';
 
 import BoldSubHeadline from '../BoldSubHeadline';
 import ProjectCards from './ProjectCards';
-import getColorKey from '../../lib/getColorKey';
-import sectionBackgroundImage from '../../lib/sectionBackgroundImage';
+import getTheme from '../../lib/getTheme';
 import styled from 'styled-components';
-import styles from '../../data/styleVariables';
 
 const WorkSection = styled.section`
-  ${sectionBackgroundImage(`work`)}
+  background-image: ${props => props.theme.sectionBackgroundImage(`work`)};
   background-size: 100% 100%;
   margin-top: -70px;
   padding: 120px 0 140px;
@@ -18,7 +16,7 @@ const WorkSection = styled.section`
 `;
 
 const Headline = styled(BoldSubHeadline)`
-  color: ${styles.colors.white};
+  color: ${getTheme(`colors.white`)};
   margin-bottom: 72.5px;
 `;
 
@@ -29,36 +27,35 @@ const SisterSiteButtonHolder = styled.div`
 
 const SisterSiteButton = styled.a`
   background-color: transparent;
-  border: solid 3px ${getColorKey(`sisterSiteButton`)};
+  border: solid 3px ${getTheme(`colors.sisterSiteButton`)};
   border-radius: 5px;
-  color: ${getColorKey(`sisterSiteButton`)};
+  color: ${getTheme(`colors.sisterSiteButton`)};
   font-size: 20px;
-  font-weight: ${styles.fontWeight.bold};
+  font-weight: ${getTheme(`fontWeight.bold`)};
   letter-spacing: .4px;
   padding: 15px 38px;
   text-transform: lowercase;
 
   &:focus,
   &:hover {
-    color: ${getColorKey(`sisterSiteButton`)};
+    color: ${getTheme(`colors.sisterSiteButton`)};
     text-decoration: none;
   }
 `;
 
-const Work = ({ projects, sisterSite, slug }) => (
-  <WorkSection id="work" slug={slug}>
+const Work = ({ projects, sisterSite }) => (
+  <WorkSection id="work">
     <Grid>
       <Row className="work__projects">
         <Col sm={10} smOffset={1}>
           <Headline>Our Work</Headline>
-          <ProjectCards projects={projects} slug={slug} />
+          <ProjectCards projects={projects} />
         </Col>
       </Row>
       <SisterSiteButtonHolder>
         <SisterSiteButton
           className="work__sister-site-button"
           href={`${sisterSite.url}#work`}
-          slug={slug}
         >
           See our {sisterSite.title === `Make Apps` ? `apps` : `bots`}
         </SisterSiteButton>
@@ -80,7 +77,6 @@ Work.propTypes = {
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
   }).isRequired,
-  slug: PropTypes.string.isRequired,
 };
 
 export default Work;

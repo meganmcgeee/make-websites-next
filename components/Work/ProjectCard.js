@@ -10,20 +10,20 @@ const ProjectCardMedia = styled(Media)`
 `;
 
 const ProjectCard = {
-  Left: ({ children, imgSrc, link, name, slug }) => (
+  Left: ({ children, imgSrc, link, name }) => (
     <ProjectCardMedia>
-      <ImageLink.Left alt={name} href={link} imgSrc={imgSrc} slug={slug} />
+      <ImageLink.Left alt={name} href={link} imgSrc={imgSrc} />
       <Description link={link} name={name}>
         {children}
       </Description>
     </ProjectCardMedia>
   ),
-  Right: ({ children, imgSrc, link, name, slug }) => (
+  Right: ({ children, imgSrc, link, name }) => (
     <ProjectCardMedia>
       <Description link={link} name={name}>
         {children}
       </Description>
-      <ImageLink.Right alt={name} href={link} imgSrc={imgSrc} slug={slug} />
+      <ImageLink.Right alt={name} href={link} imgSrc={imgSrc} />
     </ProjectCardMedia>
   ),
 };
@@ -33,7 +33,6 @@ const cardPropTypes = {
   imgSrc: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
 };
 
 ProjectCard.Left.propTypes = cardPropTypes;
