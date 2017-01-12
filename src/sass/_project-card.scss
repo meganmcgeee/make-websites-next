@@ -1,8 +1,6 @@
 $shadow-color: rgba(0, 0, 0, .2);
 
 .project-card {
-  margin: 0 0 30px;
-
   &__img-holder {
     border: solid 5px $project-card-border-color;
     border-radius: 50%;
@@ -18,14 +16,6 @@ $shadow-color: rgba(0, 0, 0, .2);
 
   &__description {
     padding-left: 42.5px;
-  }
-
-  &--right {
-    .project-card__description {
-      padding-left: 0;
-      padding-right: 42.5px;
-      text-align: right;
-    }
   }
 
   &__name {

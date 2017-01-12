@@ -1,24 +1,19 @@
-@import 'appcolors';
+@import 'colors';
+
+$navbar-background-color: $blue;
+$navbar-link-color: $white;
+$navbar-link-hover-color: $very-dark-blue;
+
+$case-study-heading-color: $dark-blue;
+$case-study-details-color: $very-dark-blue;
+
+$project-card-border-color: $light-blue;
+$project-card-details-color: $light-blue;
+$project-card-link-color: $very-dark-blue;
+$project-card-name-color: $white;
+
+$sister-site-button-color: $light-green;
+
+$contact-heading-color: $blue;
+
 @import 'shared';
-
-.apps {
-  .hero {
-    background-image: url('/static/images/hero-background-apps.svg');
-  }
-
-  .mission {
-    background-image: url('/static/images/mission-background-apps.svg');
-  }
-
-  .case-study {
-    background-image: url('/static/images/case-study-background-apps.svg');
-  }
-
-  .work {
-    background-image: url('/static/images/work-background-apps.svg');
-  }
-
-  .team {
-    background-image: url('/static/images/team-background-apps.svg');
-  }
-}

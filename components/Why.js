@@ -1,28 +1,60 @@
 import { Col, Grid, Row } from 'react-bootstrap';
-import React, { PropTypes } from 'react';
 
-const stringChild = { children: PropTypes.string.isRequired };
+import BoldSubHeadline from './BoldSubHeadline';
+import React from 'react';
+import styled from 'styled-components';
+import styles from '../data/styleVariables';
 
-const Headline = ({ children }) => (
-  <h2 className="why__headline">{children}</h2>
-);
-Headline.propTypes = stringChild;
+const WhySection = styled.section`
+  background-image: url('/static/images/why-background.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  padding: 125px 0;
+`;
 
-const Blurb = ({ children }) => (
-  <p className="why__blurb">
-    {children}
-  </p>
-);
-Blurb.propTypes = stringChild;
+const Headline = styled(BoldSubHeadline)`
+  margin-top: 0;
+`;
+
+const ValuePropHeadline = styled(Headline)`
+  margin-bottom: 60px;
+`;
+
+const BenefitsHeadline = styled(Headline)`
+  margin-bottom: 27.5px;
+`;
+
+const Blurb = styled.p`
+  color: ${styles.colors.veryDarkBlue};
+  font-size: 27.5px;
+  font-weight: 500;
+  letter-spacing: .6px;
+  margin-bottom: 1.3em;
+`;
+
+const BenefitsCol = styled(Col)`
+  padding-top: 80px;
+  text-align: right;
+`;
+
+const BenefitsList = styled.ul`
+  color: ${styles.colors.veryDarkBlue};
+  font-family: 'Gilroy', sans-serif;
+  font-size: 45px;
+  font-weight: 800;
+  letter-spacing: .8px;
+  list-style-type: none;
+`;
 
 export default () => (
-  <section className="why" id="why">
+  <WhySection id="why">
     <Grid>
       <Row>
-        <Col className="why__value-prop" sm={8}>
-          <Headline>
+        <Col sm={8}>
+          <ValuePropHeadline>
             Why web apps?
-          </Headline>
+          </ValuePropHeadline>
           <Blurb>
             Modern web apps are able to deliver an incredible desktop experience
             and a native-like mobile experience with the same codebase.
@@ -34,18 +66,18 @@ export default () => (
         </Col>
       </Row>
       <Row>
-        <Col className="why__benefits" sm={8} smOffset={4}>
-          <Headline>
+        <BenefitsCol sm={8} smOffset={4}>
+          <BenefitsHeadline>
             Web apps are
-          </Headline>
-          <ul className="why__benefit-list">
+          </BenefitsHeadline>
+          <BenefitsList>
             <li>Cross-platform</li>
             <li>Easy to staff</li>
             <li>Efficient</li>
             <li>Fast</li>
-          </ul>
-        </Col>
+          </BenefitsList>
+        </BenefitsCol>
       </Row>
     </Grid>
-  </section>
+  </WhySection>
 );

@@ -22,14 +22,14 @@ const AppsView = ({ fixNavbar, navbarIsFixed }) => (
   <div className="apps">
     <Header site={site} />
     <Waypoint onPositionChange={fixNavbar} />
-    <Navbar {...{ navbarIsFixed, navItems, sisterSite }} />
+    <Navbar {...{ navbarIsFixed, navItems, sisterSite, slug: site.slug }} />
     <Hero site={site} />
-    <Mission />
+    <Mission slug={site.slug} />
     <Why />
-    <SomethingCool />
-    <Work {...{ projects, sisterSite }} />
-    <Team />
-    <Contact />
+    <SomethingCool slug={site.slug} />
+    <Work {...{ projects, sisterSite, slug: site.slug }} />
+    <Team slug={site.slug} />
+    <Contact slug={site.slug} />
   </div>
 );
 

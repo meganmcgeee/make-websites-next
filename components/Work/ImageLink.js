@@ -1,19 +1,27 @@
 import React, { PropTypes } from 'react';
 
 import { Media } from 'react-bootstrap';
+import styled from 'styled-components';
+import styles from '../../data/styleVariables';
 
 const ImageLink = Tag => {
-  const Link = ({ alt, href, imgSrc }) => (
-    <Tag className="media-middle project-card__img-holder">
+  const ImgHolder = styled(Tag)`
+    border: solid 5px ${props => styles.colors[props.slug].borderColor};
+    border-radius: 50%;
+    padding: 37.5px;
+  `;
+  const Link = ({ alt, href, imgSrc, slug }) => (
+    <ImgHolder className="media-middle" slug={slug}>
       <a href={href} target="_blank" rel="noopener noreferrer">
         <img className="media-object project-card__img" src={imgSrc} alt={alt} />
       </a>
-    </Tag>
+    </ImgHolder>
   );
   Link.propTypes = {
     alt: PropTypes.string.isRequired,
     href: PropTypes.string.isRequired,
     imgSrc: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
   };
   return Link;
 };

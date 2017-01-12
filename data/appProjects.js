@@ -12,9 +12,9 @@ export default [
     link: `http://winston.rocks`,
   },
   {
-    name: `My Card`,
-    description: `Create and send SMS business cards.`,
-    imgSrc: `http://placekitten.com/300/300`,
-    link: `http://mycard.tech`,
+    name: `Emojitales`,
+    description: `Write a ridiculous story or caption using random emoji as inspiration.`,
+    imgSrc: `https://s3-us-west-1.amazonaws.com/makeapps-makebots/sunglasses-300x300.png`,
+    link: `http://emojitales.wtf`,
   },
 ];

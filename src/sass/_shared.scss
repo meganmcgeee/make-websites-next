@@ -1,48 +1,9 @@
-// scss-lint:disable UrlFormat
-
-@import 'fonts';
-
-body {
-  font-family: 'Avenir Next', sans-serif;
-}
-
-%bold-sub-headline {
-  color: #007ee5;
-  font-family: 'Gilroy', sans-serif;
-  font-size: 62.5px;
-  font-weight: $extra-bold;
-  letter-spacing: 1.1px;
-  line-height: 1;
-  text-transform: lowercase;
-}
-
-@media only screen and (min-width: 768px) {
-  .is-table-row {
-    display: table;
-    width: 100%;
-
-    [class*="col-"] {
-      display: table-cell;
-      float: none;
-      vertical-align: top;
-    }
-
-    .valign-middle {
-      vertical-align: middle;
-    }
-  }
-}
+$medium: 500;
+$bold: 700;
+$extra-bold: 800;
 
 // Sections
 @import 'navbar';
-@import 'hero';
-@import 'mission';
-@import 'why';
-@import 'case-study';
-@import 'work';
-@import 'team';
-@import 'contact';
 
 // Components
 @import 'project-card';
-@import 'team-member';

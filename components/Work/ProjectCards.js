@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import ProjectCard from './ProjectCard';
 
 const isEven = n => n % 2 === 0;
-const projectToCard = (project, idx) => {
+const projectToCard = slug => (project, idx) => {
   const Card = isEven(idx) ?
     ProjectCard.Left :
     ProjectCard.Right;
@@ -13,15 +13,16 @@ const projectToCard = (project, idx) => {
       key={project.name}
       link={project.link}
       name={project.name}
+      slug={slug}
     >
       {project.description}
     </Card>
   );
 };
 
-const ProjectCards = ({ projects }) => (
+const ProjectCards = ({ projects, slug }) => (
   <div className="project-cards">
-    {projects.map(projectToCard)}
+    {projects.map(projectToCard(slug))}
   </div>
 );
 
@@ -34,6 +35,7 @@ ProjectCards.propTypes = {
       name: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
+  slug: PropTypes.string.isRequired,
 };
 
 export default ProjectCards;
