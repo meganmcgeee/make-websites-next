@@ -17,18 +17,17 @@
   "cacheDirectories": [
     "nextjs/node_modules"
   ],
-  "repository": "http://github.com/makeappsio/make-websites-next.git",
-  "author": "Matthew Jesuele <matt@makeapps.io>",
+  "author": "Matthew Jesuele <matt@makeapps.io> and Megan McGee",
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "^7.1.1",
-    "eslint": "^3.11.0",
+    "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.0.0",
     "eslint-config-airbnb-base": "^10.0.1",
     "eslint-config-makeapps": "latest",
     "eslint-plugin-better": "^0.1.5",
     "eslint-plugin-fp": "^2.3.0",
-    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-lodash-fp": "^2.1.3",
     "eslint-plugin-react": "^6.9.0",
@@ -36,12 +35,16 @@
   },
   "dependencies": {
     "@mars/heroku-nextjs-build": "^1.0.1",
+    "babel-preset-env": "^1.7.0",
     "classnames": "^2.2.5",
     "lodash": "^4.17.2",
-    "next": "latest||^2.0.0-beta",
+    "next": "^2.4.9",
+    "react": "^16.4.0",
     "react-bootstrap": "^0.30.7",
+    "react-dom": "^16.4.0",
     "react-waypoint": "^5.0.0",
     "smoothscroll": "^0.3.0",
-    "styled-components": "^1.1.2"
+    "styled-components": "^3.1.0-3",
+    "stylelint": "^7.13.0"
   }
 }
